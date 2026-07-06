@@ -75,6 +75,18 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    public CategoryResponse categoryId(Long id){
+
+        log.info(LogMessages.CATEGORY_FIND_BY_ID, id);
+
+        Category category = categoryRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException(LogMessages.CATEGORY_NOT_FOUND + id));
+
+        log.info(LogMessages.PRODUCT_FOUND_SUCCESSFULLY , id);
+
+        return toDto(category);
+    }
+
+    @Override
     @Transactional
     public void deleteById(Long id) {
 

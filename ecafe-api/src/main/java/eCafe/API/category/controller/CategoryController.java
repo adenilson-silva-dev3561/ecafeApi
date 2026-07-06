@@ -2,15 +2,12 @@ package eCafe.API.category.controller;
 
 import eCafe.API.category.dto.CategoryRequest;
 import eCafe.API.category.dto.CategoryResponse;
-import eCafe.API.category.entity.Category;
 import eCafe.API.category.service.CategoryService;
 import eCafe.API.common.constants.ApiRoutes;
-import feign.Response;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -44,6 +41,13 @@ public class CategoryController {
         return ResponseEntity.ok(category);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<CategoryResponse> findById( @Valid @PathVariable Long id){
+
+        CategoryResponse category = categoryService.categoryId(id);
+
+        return ResponseEntity.status(HttpStatus.OK).body(category);
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){

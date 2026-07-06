@@ -61,4 +61,7 @@ public final class LogMessages {
 
     public static final String PRODUCT_ALREADY_EXISTS =
             "Tentativa de cadastrar produto já existente '{}'.";
+
+    public static  final String PRODUCT_FOUND_SUCCESSFULLY =
+            "Produto encontrado com sucesso! Id: '{}'";
 }

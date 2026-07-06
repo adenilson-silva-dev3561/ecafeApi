@@ -13,6 +13,8 @@ public interface CategoryService {
 
     List<CategoryResponse> findAll();
 
+    CategoryResponse categoryId(Long id);
+
     void deleteById(Long id);
 
 }

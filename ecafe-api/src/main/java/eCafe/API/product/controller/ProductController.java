@@ -58,7 +58,7 @@ public class ProductController {
 
     @GetMapping("/category/{id}")
     public ResponseEntity<List<ProductResponse>> getProductCategory(@Valid @PathVariable Long id){
-        List<ProductResponse> product = productService.produtoCategoryId(id);
+        List<ProductResponse> product = productService.productCategoryId(id);
 
         return ResponseEntity.ok(product);
     }

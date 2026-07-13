@@ -15,7 +15,7 @@ public interface ProductService {
 
     ProductResponse findById(Long id);
 
-    List<ProductResponse> produtoCategoryId(Long id);
+    List<ProductResponse> productCategoryId(Long id);
 
     List<ProductResponse>findByNameContains(String name);
 

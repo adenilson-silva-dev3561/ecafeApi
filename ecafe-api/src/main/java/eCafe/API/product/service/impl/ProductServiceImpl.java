@@ -105,7 +105,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductResponse> produtoCategoryId(Long id){
+    public List<ProductResponse> productCategoryId(Long id){
 
         Category category = findCategoryById(id);
 

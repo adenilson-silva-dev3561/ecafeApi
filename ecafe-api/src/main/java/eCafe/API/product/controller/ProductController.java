@@ -48,6 +48,28 @@ public class ProductController {
         return ResponseEntity.ok(products);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductResponse> findById(@PathVariable Long id){
+
+        ProductResponse product = productService.findById(id);
+
+        return ResponseEntity.ok(product);
+    }
+
+    @GetMapping("/category/{id}")
+    public ResponseEntity<List<ProductResponse>> getProductCategory(@Valid @PathVariable Long id){
+        List<ProductResponse> product = productService.produtoCategoryId(id);
+
+        return ResponseEntity.ok(product);
+    }
+
+    @GetMapping("/includes/{name}")
+    public ResponseEntity<List<ProductResponse>> getProductContainName(@PathVariable String name){
+        List<ProductResponse> product = productService.findByNameContains(name);
+
+        return ResponseEntity.ok(product);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
 

@@ -15,7 +15,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
+import eCafe.API.monitoring.ProductMetrics;
 import java.util.List;
 
 @Service
@@ -25,6 +25,7 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
+    private final ProductMetrics productMetrics;
 
     @Override
     @Transactional
@@ -46,6 +47,7 @@ public class ProductServiceImpl implements ProductService {
                 .build();
 
         Product savedProduct = productRepository.save(product);
+        productMetrics.incrementCreated();
 
         log.info(LogMessages.PRODUCT_CREATE_SUCCESS, savedProduct.getId());
 
@@ -73,6 +75,8 @@ public class ProductServiceImpl implements ProductService {
 
         Product updatedProduct = productRepository.save(product);
 
+        productMetrics.incrementUpdated();
+
         log.info(LogMessages.PRODUCT_UPDATE_SUCCESS, updatedProduct.getId());
 
         return toDto(updatedProduct);
@@ -90,6 +94,44 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public ProductResponse findById(Long id){
+
+        log.info("Iniciando busca de produto!");
+
+        Product product = productRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Produto não encontrado '{}' Id: " + id));
+
+        return toDto(product);
+
+    }
+
+    @Override
+    public List<ProductResponse> produtoCategoryId(Long id){
+
+        Category category = findCategoryById(id);
+
+        if(category.getId() == null){
+            throw new ResourceNotFoundException(LogMessages.CATEGORY_NOT_FOUND + id);
+        }
+
+        return  productRepository.findByCategoryId(category.getId()).stream().map(this::toDto).toList();
+
+    }
+
+
+    @Override
+    public List<ProductResponse>findByNameContains(String name){
+
+        List<ProductResponse> product = productRepository.findByNameContainingIgnoreCase(name).stream().map(this::toDto).toList();
+
+        if(product.isEmpty()){
+            throw new ResourceNotFoundException("não possui produtos com que contem essas letras: '{]' " + name);
+        }
+
+        return product;
+    }
+
+
+    @Override
     @Transactional
     public void deleteById(Long id) {
 
@@ -98,6 +140,8 @@ public class ProductServiceImpl implements ProductService {
         Product product = findProductById(id);
 
         productRepository.delete(product);
+
+        productMetrics.incrementDeleted();
 
         log.info(LogMessages.PRODUCT_DELETE_SUCCESS, product.getName());
     }

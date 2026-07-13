@@ -13,5 +13,11 @@ public interface ProductService {
 
     List<ProductResponse> findAll();
 
+    ProductResponse findById(Long id);
+
+    List<ProductResponse> produtoCategoryId(Long id);
+
+    List<ProductResponse>findByNameContains(String name);
+
     void deleteById(Long id);
 }

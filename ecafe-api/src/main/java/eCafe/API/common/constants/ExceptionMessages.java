@@ -1,8 +1,8 @@
 package eCafe.API.common.constants;
 
-public final class ErrorMessages {
+public final class ExceptionMessages {
 
-    private ErrorMessages() {
+    private ExceptionMessages() {
         throw new IllegalStateException("Classe utilitária");
     }
 
@@ -17,4 +17,8 @@ public final class ErrorMessages {
 
     public static final String PRODUCT_ALREADY_EXISTS =
             "Já existe um produto com esse nome.";
+
+    public static final String CUSTOMER_ALREADY_EXISTS =
+            "Este CPF já possui cadastro ativo.";
+
 }

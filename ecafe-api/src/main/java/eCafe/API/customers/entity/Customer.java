@@ -1,0 +1,40 @@
+package eCafe.API.customers.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.validator.constraints.br.CPF;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class Customer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String email;
+    private String phone;
+
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private LocalDate createdAt;
+
+    @CPF(message = "CPF inválido")
+    @Column(nullable = false, unique = true)
+    private String cpf;
+
+    @Column(name = "birth_date", nullable = false )
+    private LocalDate birthDate;
+
+    private boolean active;
+
+    @Column(name = "updated_at",nullable = false)
+    private LocalDate updateAt;
+
+}

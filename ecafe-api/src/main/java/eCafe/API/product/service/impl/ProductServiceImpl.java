@@ -2,7 +2,7 @@ package eCafe.API.product.service.impl;
 
 import eCafe.API.category.entity.Category;
 import eCafe.API.category.repository.CategoryRepository;
-import eCafe.API.common.constants.ErrorMessages;
+import eCafe.API.common.constants.ExceptionMessages;
 import eCafe.API.common.constants.LogMessages;
 import eCafe.API.common.exception.BusinessException;
 import eCafe.API.common.exception.ResourceNotFoundException;
@@ -152,7 +152,7 @@ public class ProductServiceImpl implements ProductService {
                 .orElseThrow(() -> {
                     log.warn(LogMessages.PRODUCT_NOT_FOUND, id);
                     return new ResourceNotFoundException(
-                            ErrorMessages.PRODUCT_NOT_FOUND + id);
+                            ExceptionMessages.PRODUCT_NOT_FOUND + id);
                 });
     }
 
@@ -162,7 +162,7 @@ public class ProductServiceImpl implements ProductService {
                 .orElseThrow(() -> {
                     log.warn(LogMessages.CATEGORY_NOT_FOUND, id);
                     return new ResourceNotFoundException(
-                            ErrorMessages.CATEGORY_NOT_FOUND + id);
+                            ExceptionMessages.CATEGORY_NOT_FOUND + id);
                 });
     }
 
@@ -172,7 +172,7 @@ public class ProductServiceImpl implements ProductService {
 
             log.warn(LogMessages.PRODUCT_ALREADY_EXISTS, name);
 
-            throw new BusinessException(ErrorMessages.PRODUCT_ALREADY_EXISTS);
+            throw new BusinessException(ExceptionMessages.PRODUCT_ALREADY_EXISTS);
         }
     }
 
@@ -184,7 +184,7 @@ public class ProductServiceImpl implements ProductService {
 
                     log.warn(LogMessages.PRODUCT_ALREADY_EXISTS, name);
 
-                    throw new BusinessException(ErrorMessages.PRODUCT_ALREADY_EXISTS);
+                    throw new BusinessException(ExceptionMessages.PRODUCT_ALREADY_EXISTS);
                 });
     }
 

@@ -5,7 +5,7 @@ import eCafe.API.category.dto.CategoryResponse;
 import eCafe.API.category.entity.Category;
 import eCafe.API.category.repository.CategoryRepository;
 import eCafe.API.category.service.CategoryService;
-import eCafe.API.common.constants.ErrorMessages;
+import eCafe.API.common.constants.ExceptionMessages;
 import eCafe.API.common.constants.LogMessages;
 import eCafe.API.common.exception.BusinessException;
 import eCafe.API.common.exception.ResourceNotFoundException;
@@ -105,7 +105,7 @@ public class CategoryServiceImpl implements CategoryService {
                 .orElseThrow(() -> {
                     log.warn(LogMessages.CATEGORY_NOT_FOUND, id);
                     return new ResourceNotFoundException(
-                            ErrorMessages.CATEGORY_NOT_FOUND + id);
+                            ExceptionMessages.CATEGORY_NOT_FOUND + id);
                 });
     }
 
@@ -115,7 +115,7 @@ public class CategoryServiceImpl implements CategoryService {
 
             log.warn(LogMessages.CATEGORY_ALREADY_EXISTS, name);
 
-            throw new BusinessException(ErrorMessages.CATEGORY_ALREADY_EXISTS);
+            throw new BusinessException(ExceptionMessages.CATEGORY_ALREADY_EXISTS);
         }
     }
 
@@ -127,7 +127,7 @@ public class CategoryServiceImpl implements CategoryService {
 
                     log.warn(LogMessages.CATEGORY_ALREADY_EXISTS_UPDATE, name);
 
-                    throw new BusinessException(ErrorMessages.CATEGORY_ALREADY_EXISTS);
+                    throw new BusinessException(ExceptionMessages.CATEGORY_ALREADY_EXISTS);
                 });
     }
 

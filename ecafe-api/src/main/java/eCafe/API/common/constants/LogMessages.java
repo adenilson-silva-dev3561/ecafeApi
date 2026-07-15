@@ -64,4 +64,16 @@ public final class LogMessages {
 
     public static  final String PRODUCT_FOUND_SUCCESSFULLY =
             "Produto encontrado com sucesso! Id: '{}'";
+
+    public static final String CUSTOMER_CPF_ALREADY_EXISTS =
+            "Este CPF já possui cadastro ativo. CPF: {}";
+
+    public static final String CUSTOMER_CREATE_START =
+            "Iniciando cadastro do cliente '{}'.";
+
+    public static final String CUSTOMER_CREATE_SUCCESS =
+            "Cliente cadastrado com sucesso. Id={}";
+
+    public static final String CUSTOMER_ALREADY_EXISTS =
+            "Tentativa de cadastrar CPF já existente. CPF={}";
 }

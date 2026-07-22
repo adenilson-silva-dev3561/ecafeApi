@@ -8,4 +8,6 @@ public interface CustomerService {
     CustomerResponse create(CustomerRequest request);
 
     CustomerResponse update(Long id, CustomerRequest request);
+
+    CustomerResponse findCustomerById(Long id);
 }

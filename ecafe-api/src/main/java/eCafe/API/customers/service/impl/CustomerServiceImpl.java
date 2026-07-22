@@ -65,7 +65,16 @@ public class CustomerServiceImpl implements CustomerService {
         return toDto(customerUpdated);
     }
 
+    public CustomerResponse findCustomerById(Long id){
+        log.info(LogMessages.CUSTOMER_FOUND_BY_ID, id);
+
+        Customer customer = findByCustomer(id);
+
+        return toDto(customer);
+    }
+
     private Customer findByCustomer(Long id) {
+
         return customerRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(ExceptionMessages.CUSTOMER_NOT_FOUND + id));
 
     }

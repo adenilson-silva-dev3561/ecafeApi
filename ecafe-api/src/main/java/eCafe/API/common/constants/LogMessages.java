@@ -41,12 +41,12 @@ public final class LogMessages {
             "Produto cadastrado com sucesso. Id={}";
 
     public static final String PRODUCT_UPDATE_START =
-            "Atualizando produto. Id={}";
+            "Atualizando produto. ID=";
     public static final String PRODUCT_UPDATE_SUCCESS =
-            "Produto atualizado com sucesso. Id={}";
+            "Produto atualizado com sucesso. ID=";
 
     public static final String PRODUCT_DELETE_START =
-            "Solicitada exclusão do produto. Id={}";
+            "Solicitada exclusão do produto. ID=";
     public static final String PRODUCT_DELETE_SUCCESS =
             "Produto '{}' removido com sucesso.";
 
@@ -72,17 +72,20 @@ public final class LogMessages {
             "Iniciando cadastro do cliente '{}'.";
 
     public static final String CUSTOMER_CREATE_SUCCESS =
-            "Cliente cadastrado com sucesso. Id={}";
+            "Cliente cadastrado com sucesso. ID=";
 
     public static final String CUSTOMER_ALREADY_EXISTS =
-            "Tentativa de cadastrar CPF já existente. CPF={}";
+            "Tentativa de cadastrar CPF já existente. CPF=";
 
     public static final String SEARCHING_CUSTOMER_FOR_UPDATE =
-            "Buscando cliente para atualização. ID={}";
+            "Buscando cliente para atualização. ID=";
 
     public static final String UPDATING_CUSTOMER =
-            "Atualizando dados do cliente. ID={}";
+            "Atualizando dados do cliente. ID=";
 
     public static final String CUSTOMER_FOUND_FOR_UPDATE =
-            "Cliente encontrado para atualização. ID={}";
+            "Cliente encontrado para atualização. ID=";
+
+    public static final String CUSTOMER_FOUND_BY_ID =
+            "Buscando cliente. ID=";
 }

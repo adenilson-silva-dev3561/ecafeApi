@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @AllArgsConstructor
 @RestController
 @RequestMapping(ApiRoutes.CUSTOMER)
@@ -31,6 +33,14 @@ public class CustomerController {
         CustomerResponse customerUpdated = customerService.update(id, request);
 
         return ResponseEntity.status(HttpStatus.OK).body(customerUpdated);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<CustomerResponse>> findAll(){
+
+        List<CustomerResponse> customers = customerService.findAll();
+
+        return ResponseEntity.status(HttpStatus.OK).body(customers);
     }
 
     @GetMapping("/{id}")

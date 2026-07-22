@@ -3,6 +3,8 @@ package eCafe.API.customers.service;
 import eCafe.API.customers.dto.CustomerRequest;
 import eCafe.API.customers.dto.CustomerResponse;
 
+import java.util.List;
+
 public interface CustomerService {
 
     CustomerResponse create(CustomerRequest request);
@@ -10,4 +12,6 @@ public interface CustomerService {
     CustomerResponse update(Long id, CustomerRequest request);
 
     CustomerResponse findCustomerById(Long id);
+
+    List<CustomerResponse> findAll();
 }

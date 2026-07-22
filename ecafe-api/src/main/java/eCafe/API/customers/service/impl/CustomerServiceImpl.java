@@ -13,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.Comparator;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -63,6 +65,12 @@ public class CustomerServiceImpl implements CustomerService {
         log.info(LogMessages.CUSTOMER_FOUND_FOR_UPDATE, id);
 
         return toDto(customerUpdated);
+    }
+
+    public List<CustomerResponse> findAll(){
+
+        return  customerRepository.findAll().stream().map(this::toDto).sorted(Comparator.comparing(CustomerResponse::id)).toList();
+
     }
 
     public CustomerResponse findCustomerById(Long id){

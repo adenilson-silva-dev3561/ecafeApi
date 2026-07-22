@@ -6,4 +6,6 @@ import eCafe.API.customers.dto.CustomerResponse;
 public interface CustomerService {
 
     CustomerResponse create(CustomerRequest request);
+
+    CustomerResponse update(Long id, CustomerRequest request);
 }

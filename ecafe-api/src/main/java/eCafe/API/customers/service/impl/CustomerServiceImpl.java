@@ -2,6 +2,7 @@ package eCafe.API.customers.service.impl;
 
 import eCafe.API.common.constants.ExceptionMessages;
 import eCafe.API.common.constants.LogMessages;
+import eCafe.API.common.exception.ResourceNotFoundException;
 import eCafe.API.customers.dto.CustomerRequest;
 import eCafe.API.customers.dto.CustomerResponse;
 import eCafe.API.customers.entity.Customer;
@@ -39,6 +40,33 @@ public class CustomerServiceImpl implements CustomerService {
         log.info(LogMessages.CUSTOMER_CREATE_SUCCESS, customerSaved.getId());
 
         return toDto(customerSaved);
+
+    }
+
+    public CustomerResponse update(Long id, CustomerRequest request) {
+
+        log.info(LogMessages.SEARCHING_CUSTOMER_FOR_UPDATE, id);
+
+        Customer customer = findByCustomer(id);
+
+        log.info(LogMessages.UPDATING_CUSTOMER, id);
+
+        customer.setName(request.name());
+        customer.setCpf(request.cpf());
+        customer.setEmail(request.email());
+        customer.setBirthDate(request.birth_date());
+        customer.setUpdateAt(LocalDate.now());
+        customer.setActive(request.active());
+
+        Customer customerUpdated = customerRepository.save(customer);
+
+        log.info(LogMessages.CUSTOMER_FOUND_FOR_UPDATE, id);
+
+        return toDto(customerUpdated);
+    }
+
+    private Customer findByCustomer(Long id) {
+        return customerRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(ExceptionMessages.CUSTOMER_NOT_FOUND + id));
 
     }
 

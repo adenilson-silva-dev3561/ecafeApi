@@ -76,4 +76,13 @@ public final class LogMessages {
 
     public static final String CUSTOMER_ALREADY_EXISTS =
             "Tentativa de cadastrar CPF já existente. CPF={}";
+
+    public static final String SEARCHING_CUSTOMER_FOR_UPDATE =
+            "Buscando cliente para atualização. ID={}";
+
+    public static final String UPDATING_CUSTOMER =
+            "Atualizando dados do cliente. ID={}";
+
+    public static final String CUSTOMER_FOUND_FOR_UPDATE =
+            "Cliente encontrado para atualização. ID={}";
 }

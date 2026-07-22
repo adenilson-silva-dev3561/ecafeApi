@@ -8,10 +8,7 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
@@ -26,5 +23,13 @@ public class CustomerController {
         CustomerResponse customer = customerService.create(dto);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(customer);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<CustomerResponse> update(@PathVariable Long id, @Valid @RequestBody CustomerRequest request ){
+
+        CustomerResponse customerUpdated = customerService.update(id, request);
+
+        return  ResponseEntity.status(HttpStatus.OK).body(customerUpdated);
     }
 }

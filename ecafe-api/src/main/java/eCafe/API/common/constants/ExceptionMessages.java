@@ -21,4 +21,7 @@ public final class ExceptionMessages {
     public static final String CUSTOMER_ALREADY_EXISTS =
             "Este CPF já possui cadastro ativo.";
 
+    public static final String CUSTOMER_NOT_FOUND =
+            "Cliente não encontrado. ID={}";
+
 }

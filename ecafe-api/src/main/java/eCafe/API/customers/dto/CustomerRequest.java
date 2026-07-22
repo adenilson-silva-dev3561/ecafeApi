@@ -20,6 +20,9 @@ public record CustomerRequest(
         String cpf,
 
         @NotNull(message = "Data de nascimento é obrigatório")
-        LocalDate birth_date
+        LocalDate birth_date,
+
+        @NotNull(message = "Campo active não pode ser null!")
+        Boolean active
 
 ){}

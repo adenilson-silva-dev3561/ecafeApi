@@ -8,6 +8,7 @@ import eCafe.API.customers.dto.CustomerResponse;
 import eCafe.API.customers.entity.Customer;
 import eCafe.API.customers.repository.CustomerRepository;
 import eCafe.API.customers.service.CustomerService;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -79,6 +80,19 @@ public class CustomerServiceImpl implements CustomerService {
         Customer customer = findByCustomer(id);
 
         return toDto(customer);
+    }
+
+    @Transactional
+    @Override
+    public void deleteById(Long id){
+
+        log.info(LogMessages.CUSTOMER_FOUND_BY_ID, id);
+
+        Customer customer = findByCustomer(id);
+
+        customerRepository.delete(customer);
+
+
     }
 
     private Customer findByCustomer(Long id) {

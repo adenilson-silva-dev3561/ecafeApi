@@ -88,4 +88,9 @@ public final class LogMessages {
 
     public static final String CUSTOMER_FOUND_BY_ID =
             "Buscando cliente. ID={}";
+
+    public static final String CUSTOMER_DELETE_BY_ID =
+            "Excluindo cliente de id: {}";
+
+    public static final String CUSTOMER_DELETED_BY_ID = "Cliente deletado com sucesso! ID = {}";
 }

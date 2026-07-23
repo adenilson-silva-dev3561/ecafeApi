@@ -85,12 +85,12 @@ public class CustomerServiceImpl implements CustomerService {
     @Transactional
     @Override
     public void deleteById(Long id){
-
-        log.info(LogMessages.CUSTOMER_FOUND_BY_ID, id);
+        log.info(LogMessages.CUSTOMER_DELETE_BY_ID, id);
 
         Customer customer = findByCustomer(id);
 
         customerRepository.delete(customer);
+        log.info(LogMessages.CUSTOMER_DELETED_BY_ID , id);
 
 
     }

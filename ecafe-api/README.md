@@ -238,4 +238,4 @@ Este projeto foi criado para consolidar conhecimentos em:
 Desenvolvedor Backend Java.
 
 - GitHub: https://github.com/adenilson-silva-dev3561
-- LinkedIn: https://www.linkedin.com/in/SEU-LINKEDIN
+- LinkedIn: https://www.linkedin.com/in/adenilson-silva-88702125a/

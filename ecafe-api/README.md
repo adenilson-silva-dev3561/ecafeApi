@@ -1,4 +1,6 @@
-# ☕ eCafe API
+<p align="center">
+
+<img src="./src/main/java/eCafe/API/docs/banner.png" alt="eCafe API Banner"/>
 
 </p>
 
@@ -10,7 +12,13 @@
 
 Backend REST API desenvolvida com <strong>Java</strong> e <strong>Spring Boot</strong> para gerenciamento de uma cafeteria.
 
----
+Projeto desenvolvido com foco em arquitetura limpa, boas práticas e tecnologias utilizadas no mercado.
+
+</p>
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-success"/>
 
 <img src="https://img.shields.io/badge/Java-21-ED8B00?logo=openjdk&logoColor=white"/>
 
@@ -195,8 +203,6 @@ src
     │       ├── security
     │       └── EcafeApiApplication.java
     └── resources
-        ├── application.yml
-        └── ...
 ```
 ---
 
@@ -249,7 +255,7 @@ mvnw.cmd spring-boot:run
 
 # 🗺 Roadmap
 
-## Concluído
+## ✅ Fase 1 — Categoria
 
 - [x] CRUD de Categorias
 - [x] Bean Validation

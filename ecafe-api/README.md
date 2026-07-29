@@ -1,6 +1,6 @@
 <p align="center">
 
-<img src="./src/main/java/eCafe/API/docs/banner.png" alt="eCafe API Banner"/>
+<img src="docs/banner.png" alt="eCafe API Banner"/>
 
 </p>
 
@@ -10,9 +10,9 @@
 
 <p align="center">
 
-Backend REST API desenvolvida com <strong>Java</strong> e <strong>Spring Boot</strong> para gerenciamento de uma cafeteria.
+Backend REST API desenvolvida com <strong>Java</strong> e <strong>Spring Boot</strong> para um <strong>Sistema de Gestão Comercial</strong> voltado para uma loja especializada na comercialização de cafés, grãos, doces, amendoins, paçocas, rapaduras e outros produtos alimentícios.
 
-Projeto desenvolvido com foco em arquitetura limpa, boas práticas e tecnologias utilizadas no mercado.
+Projeto desenvolvido com foco em arquitetura em camadas, boas práticas, escalabilidade e tecnologias amplamente utilizadas no mercado.
 
 </p>
 
@@ -34,20 +34,24 @@ Projeto desenvolvido com foco em arquitetura limpa, boas práticas e tecnologias
 
 # 💡 Sobre o Projeto
 
-O **eCafe API** é um projeto pessoal desenvolvido para simular o backend de uma cafeteria.
+O **eCafe API** é um projeto pessoal desenvolvido para simular o backend de um sistema de gestão comercial para uma loja especializada na venda de cafés, grãos, doces, amendoins, paçocas, rapaduras e diversos produtos alimentícios.
 
-Seu principal objetivo é consolidar conhecimentos em desenvolvimento backend utilizando Java e Spring Boot, aplicando conceitos utilizados em aplicações reais, como:
+O objetivo do projeto é consolidar conhecimentos em desenvolvimento backend utilizando Java e Spring Boot, aplicando conceitos presentes em aplicações reais.
+
+Durante o desenvolvimento são aplicadas boas práticas como:
 
 - Arquitetura em Camadas
 - APIs REST
-- Persistência de Dados
+- Spring Data JPA
+- Hibernate
 - Bean Validation
 - Tratamento Global de Exceções
 - Logs Estruturados
 - Documentação com Swagger/OpenAPI
 - Versionamento com Git
+- Código Limpo
 
-O projeto continua evoluindo continuamente com novas funcionalidades, buscando se aproximar cada vez mais de um sistema utilizado em ambiente de produção.
+O projeto continuará evoluindo com novas funcionalidades para representar um sistema comercial completo.
 
 ---
 
@@ -59,23 +63,24 @@ O projeto continua evoluindo continuamente com novas funcionalidades, buscando s
 
 </p>
 
-### Backend
+## Backend
 
 - Java 21
 - Spring Boot
 - Spring Data JPA
 - Hibernate
+- Bean Validation
 
-### Banco de Dados
+## Banco de Dados
 
 - PostgreSQL
 
-### Documentação
+## Documentação
 
 - Swagger
 - OpenAPI
 
-### Ferramentas
+## Ferramentas
 
 - IntelliJ IDEA
 - Maven
@@ -83,14 +88,17 @@ O projeto continua evoluindo continuamente com novas funcionalidades, buscando s
 - GitHub
 - Postman
 
-### Em aprendizado
+## Em aprendizado
 
 - Docker
+- Spring Security
+- JWT
 - Keycloak
 - Redis
-- Testcontainers
 - JUnit 5
 - Mockito
+- Testcontainers
+- GitHub Actions
 
 ---
 
@@ -98,49 +106,49 @@ O projeto continua evoluindo continuamente com novas funcionalidades, buscando s
 
 ## 📂 Categorias
 
-- Cadastro de Categoria
-- Listagem de Categorias
-- Busca por ID
-- Atualização
-- Exclusão
+- ✅ Cadastro
+- ✅ Listagem
+- ✅ Busca por ID
+- ✅ Atualização
+- ✅ Exclusão
 
 ---
 
 ## 📦 Produtos
 
-- Cadastro de Produto
-- Listagem
-- Busca por ID
-- Busca por Categoria
-- Atualização
-- Exclusão
+- ✅ Cadastro
+- ✅ Listagem
+- ✅ Busca por ID
+- ✅ Busca por Categoria
+- ✅ Atualização
+- ✅ Exclusão
 
 ---
 
 ## 👤 Clientes
 
-- Cadastro de Cliente
-- Listagem
-- Busca por ID
-- Atualização
-- Exclusão
+- ✅ Cadastro
+- ✅ Listagem
+- ✅ Busca por ID
+- ✅ Atualização
+- ✅ Exclusão
 
 ---
 
 ## 🔧 Recursos Gerais
 
-- Bean Validation
-- Tratamento Global de Exceções
-- Logs Estruturados
-- Swagger/OpenAPI
-- Spring Data JPA
-- Persistência com PostgreSQL
+- ✅ Bean Validation
+- ✅ Tratamento Global de Exceções
+- ✅ Logs Estruturados
+- ✅ Swagger / OpenAPI
+- ✅ Spring Data JPA
+- ✅ Persistência com PostgreSQL
 
 ---
 
 # 🏗 Arquitetura
 
-O projeto segue o padrão **Layered Architecture**, promovendo organização, reutilização e separação de responsabilidades.
+O projeto segue o padrão **Layered Architecture**, promovendo organização, reutilização, baixo acoplamento e separação de responsabilidades.
 
 ```
 Cliente
@@ -187,7 +195,6 @@ PostgreSQL
 
 # 📂 Estrutura do Projeto
 
-
 ```text
 src
 └── main
@@ -197,13 +204,13 @@ src
     │       ├── common
     │       ├── config
     │       ├── customers
-    │       ├── docs
     │       ├── monitoring
     │       ├── product
     │       ├── security
     │       └── EcafeApiApplication.java
     └── resources
 ```
+
 ---
 
 # 📚 Documentação da API
@@ -216,7 +223,7 @@ http://localhost:8080/swagger-ui/index.html
 
 ---
 
-# ⚙️ Como executar
+# ⚙️ Como Executar
 
 ## Pré-requisitos
 
@@ -255,40 +262,37 @@ mvnw.cmd spring-boot:run
 
 # 🗺 Roadmap
 
-## ✅ Fase 1 — Categoria
+## ✅ Fase 1 — Categorias
 
-- [x] CRUD de Categorias
+- [x] CRUD
 - [x] Bean Validation
 - [x] Logs
 - [x] Swagger
 
 ---
 
-## ✅ Fase 2 — Produto
+## ✅ Fase 2 — Produtos
 
-- [x] CRUD de Produtos
+- [x] CRUD
 - [x] Busca por Categoria
 - [x] Relacionamento Produto x Categoria
-- [x] Swagger
 
 ---
 
-## ✅ Fase 3 — Cliente
+## ✅ Fase 3 — Clientes
 
-- [x] CRUD de Clientes
+- [x] CRUD
 - [x] Validação de CPF
 - [x] Validação de E-mail
-- [x] Logs
-- [x] Swagger
 
 ---
 
 ## 🚧 Fase 4 — Carrinho
 
 - [ ] Criar Carrinho
-- [ ] Adicionar Produto
+- [ ] Adicionar Produtos
 - [ ] Atualizar Quantidade
-- [ ] Remover Produto
+- [ ] Remover Produtos
 
 ---
 
@@ -300,10 +304,11 @@ mvnw.cmd spring-boot:run
 
 ---
 
-## 🚧 Fase 6 — Estoque
+## 🚧 Fase 6 — Controle de Estoque
 
-- [ ] Controle de Estoque
-- [ ] Atualização Automática
+- [ ] Entrada de Produtos
+- [ ] Saída Automática
+- [ ] Inventário
 
 ---
 
@@ -311,28 +316,29 @@ mvnw.cmd spring-boot:run
 
 - [ ] PIX
 - [ ] Cartão
-- [ ] Mercado Pago
+- [ ] Dinheiro
 
 ---
 
 ## 🚧 Fase 8 — NFC-e
 
-- [ ] Emissão de Nota Fiscal
+- [ ] Emissão de NFC-e
 - [ ] XML
 - [ ] PDF
 
 ---
 
-## 🚧 Fase 9 — Dashboard
+## 🚧 Fase 9 — Dashboard Administrativo
 
 - [ ] Relatórios
-- [ ] Produtos mais vendidos
 - [ ] Indicadores
+- [ ] Produtos mais vendidos
 
 ---
 
 ## 🚧 Fase 10 — Segurança
 
+- [ ] Spring Security
 - [ ] JWT
 - [ ] Keycloak
 - [ ] Controle de Permissões
@@ -359,11 +365,16 @@ Este projeto foi criado para consolidar conhecimentos em:
 - Java
 - Spring Boot
 - Spring Data JPA
+- Hibernate
 - PostgreSQL
 - APIs REST
 - Arquitetura em Camadas
+- Bean Validation
 - Código Limpo
+- Tratamento Global de Exceções
+- Logs Estruturados
 - Swagger/OpenAPI
+- Spring Security
 - Docker
 - Keycloak
 - Testes Automatizados
@@ -375,19 +386,23 @@ Este projeto foi criado para consolidar conhecimentos em:
 
 ## Adenilson Silva
 
-Desenvolvedor Backend Java.
+Desenvolvedor Backend Java
 
-📧 Email
+<p align="center">
 
-**adenilson.silva.dev.3561@gmail.com**
+<a href="mailto:adenilson.silva.dev.3561@gmail.com">
+<img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
 
-💼 LinkedIn
+<a href="https://www.linkedin.com/in/adenilson-silva-88702125a/">
+<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
 
-https://www.linkedin.com/in/adenilson-silva-88702125a/
+<a href="https://github.com/adenilson-silva-dev3561">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
 
-💻 GitHub
-
-https://github.com/adenilson-silva-dev3561
+</p>
 
 ---
 

@@ -1,105 +1,170 @@
 # ☕ eCafe API
 
-Backend REST API desenvolvida com **Java** e **Spring Boot** para gerenciamento de uma cafeteria.
+</p>
 
-O objetivo deste projeto é aplicar conceitos utilizados em aplicações reais, como desenvolvimento de APIs REST, arquitetura em camadas, persistência de dados, validações, tratamento global de exceções, documentação com Swagger/OpenAPI e boas práticas de desenvolvimento.
+<h1 align="center">
+☕ eCafe API
+</h1>
 
-O projeto está sendo desenvolvido de forma incremental e continuará evoluindo com novas funcionalidades e integrações, simulando um sistema utilizado em ambiente de produção.
+<p align="center">
 
-> 🚧 **Status:** Projeto em desenvolvimento ativo.
+Backend REST API desenvolvida com <strong>Java</strong> e <strong>Spring Boot</strong> para gerenciamento de uma cafeteria.
 
 ---
 
-# 🛠️ Tecnologias
+<img src="https://img.shields.io/badge/Java-21-ED8B00?logo=openjdk&logoColor=white"/>
 
-<p align="left">
+<img src="https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?logo=springboot&logoColor=white"/>
 
-<img src="https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"/>
+<img src="https://img.shields.io/badge/PostgreSQL-16-4169E1?logo=postgresql&logoColor=white"/>
 
-<img src="https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/Spring_Data_JPA-6DB33F?style=for-the-badge"/>
-
-<img src="https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=hibernate&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black"/>
-
-<img src="https://img.shields.io/badge/OpenAPI-6BA539?style=for-the-badge"/>
-
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+<img src="https://img.shields.io/badge/Maven-C71A36?logo=apachemaven&logoColor=white"/>
 
 </p>
 
 ---
 
-# 🚀 Funcionalidades Implementadas
+# 💡 Sobre o Projeto
+
+O **eCafe API** é um projeto pessoal desenvolvido para simular o backend de uma cafeteria.
+
+Seu principal objetivo é consolidar conhecimentos em desenvolvimento backend utilizando Java e Spring Boot, aplicando conceitos utilizados em aplicações reais, como:
+
+- Arquitetura em Camadas
+- APIs REST
+- Persistência de Dados
+- Bean Validation
+- Tratamento Global de Exceções
+- Logs Estruturados
+- Documentação com Swagger/OpenAPI
+- Versionamento com Git
+
+O projeto continua evoluindo continuamente com novas funcionalidades, buscando se aproximar cada vez mais de um sistema utilizado em ambiente de produção.
+
+---
+
+# 🚀 Tecnologias
+
+<p align="center">
+
+<img src="https://skillicons.dev/icons?i=java,spring,postgres,maven,git,github,idea,docker,postman"/>
+
+</p>
+
+### Backend
+
+- Java 21
+- Spring Boot
+- Spring Data JPA
+- Hibernate
+
+### Banco de Dados
+
+- PostgreSQL
+
+### Documentação
+
+- Swagger
+- OpenAPI
+
+### Ferramentas
+
+- IntelliJ IDEA
+- Maven
+- Git
+- GitHub
+- Postman
+
+### Em aprendizado
+
+- Docker
+- Keycloak
+- Redis
+- Testcontainers
+- JUnit 5
+- Mockito
+
+---
+
+# ✅ Funcionalidades Implementadas
 
 ## 📂 Categorias
 
-- ✅ Cadastrar categoria
-- ✅ Listar categorias
-- ✅ Buscar categoria por ID
-- ✅ Atualizar categoria
-- ✅ Remover categoria
+- Cadastro de Categoria
+- Listagem de Categorias
+- Busca por ID
+- Atualização
+- Exclusão
 
 ---
 
 ## 📦 Produtos
 
-- ✅ Cadastrar produto
-- ✅ Listar produtos
-- ✅ Buscar produto por ID
-- ✅ Buscar produtos por categoria
-- ✅ Atualizar produto
-- ✅ Remover produto
+- Cadastro de Produto
+- Listagem
+- Busca por ID
+- Busca por Categoria
+- Atualização
+- Exclusão
 
 ---
 
 ## 👤 Clientes
 
-- ✅ Cadastrar cliente
-- ✅ Listar clientes
-- ✅ Buscar cliente por ID
-- ✅ Atualizar cliente
-- ✅ Remover cliente
+- Cadastro de Cliente
+- Listagem
+- Busca por ID
+- Atualização
+- Exclusão
 
 ---
 
 ## 🔧 Recursos Gerais
 
-- ✅ Bean Validation
-- ✅ Swagger/OpenAPI
-- ✅ Tratamento Global de Exceções
-- ✅ Logs da aplicação
-- ✅ Spring Data JPA
-- ✅ Persistência com PostgreSQL
+- Bean Validation
+- Tratamento Global de Exceções
+- Logs Estruturados
+- Swagger/OpenAPI
+- Spring Data JPA
+- Persistência com PostgreSQL
 
 ---
 
-# 🏗️ Arquitetura
+# 🏗 Arquitetura
 
-O projeto segue uma arquitetura em camadas (Layered Architecture), promovendo separação de responsabilidades, organização do código e facilidade de manutenção.
+O projeto segue o padrão **Layered Architecture**, promovendo organização, reutilização e separação de responsabilidades.
 
 ```
-Controller
-     │
-     ▼
+Cliente
+
+    │
+
+    ▼
+
+REST Controller
+
+    │
+
+    ▼
+
 Service
-     │
-     ▼
+
+    │
+
+    ▼
+
 Repository
-     │
-     ▼
+
+    │
+
+    ▼
+
 PostgreSQL
 ```
 
-### Camadas
+---
+
+## Organização das Camadas
 
 - Controller
 - Service
@@ -108,24 +173,27 @@ PostgreSQL
 - DTO
 - Exception
 - Config
-- Util
+- Constants
 
 ---
 
 # 📂 Estrutura do Projeto
 
-```
+
+```text
 src
 └── main
     ├── java
-    │   └── ecafe
+    │   └── eCafe.API
     │       ├── category
-    │       ├── product
-    │       ├── customer
+    │       ├── common
     │       ├── config
-    │       ├── exception
-    │       └── util
-    │
+    │       ├── customers
+    │       ├── docs
+    │       ├── monitoring
+    │       ├── product
+    │       ├── security
+    │       └── EcafeApiApplication.java
     └── resources
         ├── application.yml
         └── ...
@@ -135,7 +203,7 @@ src
 
 # 📚 Documentação da API
 
-Após iniciar a aplicação, a documentação estará disponível em:
+Após iniciar a aplicação, acesse:
 
 ```
 http://localhost:8080/swagger-ui/index.html
@@ -143,7 +211,7 @@ http://localhost:8080/swagger-ui/index.html
 
 ---
 
-# ⚙️ Como Executar
+# ⚙️ Como executar
 
 ## Pré-requisitos
 
@@ -152,21 +220,21 @@ http://localhost:8080/swagger-ui/index.html
 - PostgreSQL
 - Git
 
-## Clonar o projeto
+### Clonar o projeto
 
 ```bash
 git clone https://github.com/adenilson-silva-dev3561/ecafe-api.git
 ```
 
-## Entrar na pasta
+### Entrar na pasta
 
 ```bash
 cd ecafe-api
 ```
 
-## Executar
+### Executar
 
-Linux / macOS
+Linux
 
 ```bash
 ./mvnw spring-boot:run
@@ -180,62 +248,146 @@ mvnw.cmd spring-boot:run
 
 ---
 
-# 🗺️ Roadmap
+# 🗺 Roadmap
 
 ## Concluído
 
 - [x] CRUD de Categorias
-- [x] CRUD de Produtos
-- [x] CRUD de Clientes
 - [x] Bean Validation
-- [x] Swagger/OpenAPI
-- [x] Tratamento Global de Exceções
 - [x] Logs
-
-## Próximas funcionalidades
-
-- [ ] Carrinho de Compras
-- [ ] Pedidos
-- [ ] Controle de Estoque
-- [ ] Pagamentos
-- [ ] Emissão de NFC-e
-- [ ] Impressão de Pedidos
-- [ ] Upload de Imagens
-- [ ] Dashboard Administrativo
-- [ ] Docker
-- [ ] Redis
-- [ ] Keycloak
-- [ ] JWT
-- [ ] Testes Unitários
-- [ ] Testcontainers
-- [ ] CI/CD com GitHub Actions
+- [x] Swagger
 
 ---
 
-# 🎯 Objetivos de Aprendizado
+## ✅ Fase 2 — Produto
+
+- [x] CRUD de Produtos
+- [x] Busca por Categoria
+- [x] Relacionamento Produto x Categoria
+- [x] Swagger
+
+---
+
+## ✅ Fase 3 — Cliente
+
+- [x] CRUD de Clientes
+- [x] Validação de CPF
+- [x] Validação de E-mail
+- [x] Logs
+- [x] Swagger
+
+---
+
+## 🚧 Fase 4 — Carrinho
+
+- [ ] Criar Carrinho
+- [ ] Adicionar Produto
+- [ ] Atualizar Quantidade
+- [ ] Remover Produto
+
+---
+
+## 🚧 Fase 5 — Pedidos
+
+- [ ] Criar Pedido
+- [ ] Histórico de Pedidos
+- [ ] Status do Pedido
+
+---
+
+## 🚧 Fase 6 — Estoque
+
+- [ ] Controle de Estoque
+- [ ] Atualização Automática
+
+---
+
+## 🚧 Fase 7 — Pagamentos
+
+- [ ] PIX
+- [ ] Cartão
+- [ ] Mercado Pago
+
+---
+
+## 🚧 Fase 8 — NFC-e
+
+- [ ] Emissão de Nota Fiscal
+- [ ] XML
+- [ ] PDF
+
+---
+
+## 🚧 Fase 9 — Dashboard
+
+- [ ] Relatórios
+- [ ] Produtos mais vendidos
+- [ ] Indicadores
+
+---
+
+## 🚧 Fase 10 — Segurança
+
+- [ ] JWT
+- [ ] Keycloak
+- [ ] Controle de Permissões
+
+---
+
+## 🚧 Infraestrutura
+
+- [ ] Docker
+- [ ] Docker Compose
+- [ ] Redis
+- [ ] JUnit 5
+- [ ] Mockito
+- [ ] Testcontainers
+- [ ] GitHub Actions (CI/CD)
+
+---
+
+# 🎯 Objetivos
 
 Este projeto foi criado para consolidar conhecimentos em:
 
-- Arquitetura de APIs REST
+- Desenvolvimento Backend
+- Java
 - Spring Boot
 - Spring Data JPA
 - PostgreSQL
-- Boas práticas de desenvolvimento
-- Documentação de APIs
-- Tratamento de exceções
-- Logs
-- Segurança com Keycloak
+- APIs REST
+- Arquitetura em Camadas
+- Código Limpo
+- Swagger/OpenAPI
 - Docker
-- Testes automatizados
-- Integração Contínua (CI/CD)
+- Keycloak
+- Testes Automatizados
+- CI/CD
 
 ---
 
 # 👨‍💻 Autor
 
-**Adenilson Silva**
+## Adenilson Silva
 
 Desenvolvedor Backend Java.
 
-- GitHub: https://github.com/adenilson-silva-dev3561
-- LinkedIn: https://www.linkedin.com/in/adenilson-silva-88702125a/
+📧 Email
+
+**adenilson.silva.dev.3561@gmail.com**
+
+💼 LinkedIn
+
+https://www.linkedin.com/in/adenilson-silva-88702125a/
+
+💻 GitHub
+
+https://github.com/adenilson-silva-dev3561
+
+---
+
+<p align="center">
+
+⭐ Se este projeto foi útil para você, deixe uma estrela no repositório.
+
+</p>

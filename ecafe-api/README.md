@@ -190,23 +190,19 @@ PostgreSQL
 
 ```text
 src
-├── main
-│   ├── java
-│   │   └── eCafe.API
-│   │       ├── category
-│   │       ├── common
-│   │       │   ├── constants
-│   │       │   └── exception
-│   │       ├── config
-│   │       ├── customers
-│   │       ├── docs
-│   │       ├── monitoring
-│   │       ├── product
-│   │       ├── security
-│   │       └── EcafeApiApplication.java
-│   └── resources
-└── test
-    └── java
+└── main
+    ├── java
+    │   └── eCafe.API
+    │       ├── category
+    │       ├── common
+    │       ├── config
+    │       ├── customers
+    │       ├── docs
+    │       ├── monitoring
+    │       ├── product
+    │       ├── security
+    │       └── EcafeApiApplication.java
+    └── resources
 ```
 
 ---

@@ -204,7 +204,6 @@ src
     │       └── EcafeApiApplication.java
     └── resources
 ```
-
 ---
 
 # 📚 Documentação da API

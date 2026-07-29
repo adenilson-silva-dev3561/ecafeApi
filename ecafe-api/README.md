@@ -198,7 +198,6 @@ src
         ├── application.yml
         └── ...
 ```
-
 ---
 
 # 📚 Documentação da API
